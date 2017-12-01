@@ -1,6 +1,6 @@
 from PIL import Image
 import math
-from urllib import urlretrieve
+from urllib.request import urlretrieve
 from os.path import isfile
 
 source_file = "world_map.jpg"
@@ -13,8 +13,8 @@ output_size = 768
 output = Image.new("RGBA", (output_size, output_size))
 output_pixels = output.load()
 
-for i in xrange(output.size[0]):
-    for j in xrange(output.size[1]):
+for i in range(output.size[0]):
+    for j in range(output.size[1]):
         x = (2.0 * i / output.size[0] - 1.0)
         y = (2.0 * j / output.size[1] - 1.0)
         if x**2 + y**2 < 1.0:
